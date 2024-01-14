@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-FizzBuzz solution by utilising conditionals
-"""
+"""FizzBuzz concatenation solution"""
 
 
 def FizzBuzz(num: int) -> str:
@@ -13,16 +11,16 @@ def FizzBuzz(num: int) -> str:
         'Buzz' if nuum divisiblle by five
         'FizzBuzz' if num divisible by both 3 & 5
     """
-
+    string = ""
     if num % 3 == 0:
-        if num % 5 == 0:
-            return 'FizzBuzz'
-        else:
-            return 'Fizz'
-    elif num % 5 == 0:
-        return 'Buzz'
-    else:
-        return 'No Fizz No Buzz'
+        string = string + "Fizz"
+    if num % 5 == 0:
+        string = string + "Buzz"
+    if num % 5 != 0 and num % 3 != 0:
+        string = string + "No Fizz No Buzz"
+
+    return string
+
 
 if __name__ == "__main__":
     num = input("Enter number: ")
@@ -31,4 +29,3 @@ if __name__ == "__main__":
         print(FizzBuzz(int(num)))
     except ValueError:
         print("Input number only!")
-    
